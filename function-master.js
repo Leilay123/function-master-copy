@@ -77,7 +77,7 @@ function capitalizeWord(string) {
  * E:
  */
 
-return string.charAt(0).toUpperCase() + string.slice(1)
+return string.split("")[0].toUpperCase() + string.slice(1)
 
 }
 
@@ -91,12 +91,14 @@ function capitalizeAllWords(string) {
  * O: return all the words with the first letter caplizaed
  * C:
  * E:
- */
+*/
 
-for(var i = 0; i < string.length; ){
-    return string.charAt(0).toUpperCase() + string.slice(1)
+var words = string.split("");
+
+for(var i = 0; i < words.length; i++){
+     words[i][0].toUpperCase() + words[i].slice(1)
 }
-
+return words.join(" ")
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -105,11 +107,17 @@ for(var i = 0; i < string.length; ){
 
 function welcomeMessage(object) {
 /**
- * I: function
- * O: 
- * C:
+ * I: function welcomeMessagetakes an object (that as a name key/value)
+ * O: return string that says "Welcome Name"
+ * C: The name must be capilized
  * E:
  */
+
+var name = Object.values(object)[0];
+
+var capitalized = name.split("")[0].toUpperCase() + name.slice(1);
+return "Welcome " + capitalized + "!";
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -118,11 +126,22 @@ function welcomeMessage(object) {
 
 function profileInfo(object) {
 /**
- * I: function
- * O: 
- * C:
+ * I: function profileInfo takes an object (with a name + species)
+ * O: return a string that's <Name> is a <Spieces>
+ * C: Both name and species need to be caplilized 
  * E:
  */
+
+var nameObj = object.name // for the name
+
+var species = object.speices; // for the speices
+
+var capitalizedName = nameObj.split("")[0].toUpperCase() + nameObj.slice(1);
+
+var capitalizedSpecies = species.split("")[0].toUpperCase() + species.slice(1);
+
+return capitalizedName + " is a " + capitalizedSpecies
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -131,11 +150,19 @@ function profileInfo(object) {
 
 function maybeNoises(object) {
 /**
- * I: function
- * O: 
+ * I: function maybeNoises tajes an object (looking fot an noises array)
+ * O: if object has noise array have noises, return an string w/ noises
+ * if no noises array, return "there are no noises"
  * C:
  * E:
  */
+
+if (Array.isArray(object.noises) && object.noises.length > 0){
+    return object.noises.join(" ")
+} else {
+    return "there are no noises"
+}
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -144,11 +171,24 @@ function maybeNoises(object) {
 
 function hasWord(string, word) {
 /**
- * I: function
- * O: 
+ * I: function hasWord takes string (og words) and a word
+ * O: return true if <word> is in <string of words>
+ * if not, return false
  * C:
  * E:
  */
+
+var wordCheck = string.split(" ");
+
+for (var i = 0; i < wordCheck.length; i++) {
+    
+    if (wordCheck[i] === word) {
+      return true;
+    }
+  }
+  
+  return false; 
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -157,11 +197,15 @@ function hasWord(string, word) {
 
 function addFriend (name, object) {
 /**
- * I: function
- * O: 
+ * I: function addFriend take name and object
+ * O: return the object with the added names in the friends array
  * C:
  * E:
  */
+
+object.friends.push(name);
+return object;
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -170,11 +214,23 @@ function addFriend (name, object) {
 
 function isFriend(name, object) {
 /**
- * I: function
- * O: 
+ * I: function isFriend takes an name and object parameter
+ * O: return true if name is in the friend object
+ * if not return false
  * C:
  * E:
  */
+
+
+for (var i = 0; i < object.friends.length; i++){
+    if (name === object.friends[i]){
+        return true
+        
+    }
+}
+
+return false
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -183,8 +239,8 @@ function isFriend(name, object) {
 
 function nonFriends(name, array) {
 /**
- * I: function
- * O: 
+ * I: function nonFriends take an name and an array (list of people)
+ * O: return a list of names (array) that <name> is not friends with
  * C:
  * E:
  */
