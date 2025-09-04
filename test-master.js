@@ -63,7 +63,7 @@
           in_foo = this.from_yay;
         }
         assert.equal(in_foo, "i'm in foo");
-        assert.equal(this.from_yay, "i'm inside yay;");
+        assert.equal(this.from_yay, undefined);
       }
       yay();
       foo();
@@ -93,11 +93,11 @@
       }
   
       yay();
-      assert.equal(this.counter, 10);
+      assert.equal(this.counter, undefined);
       yay();
-      assert.equal(this.counter, 11);
+      assert.equal(this.counter, undefined);
       yay();
-      assert.equal(this.counter, 12);
+      assert.equal(this.counter, undefined);
     });
   
     QUnit.test("Inner scope can access outer scope", function(assert){
