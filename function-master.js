@@ -3,6 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+/**
+ * I: function objectValues takes an object as a parameter
+ * O: return the object as an array
+ * C:
+ * E:
+ */
+    return Object.values(object)
     // code
 } 
 
@@ -11,6 +18,14 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+/**
+ * I: function keysToString  take an object parameter
+ * O: return the keys in the object and return a string
+ * C: each key in string is seperated by a space
+ * E:
+ */
+
+return Object.keys(object).join(" ")
 
 }
 
@@ -19,7 +34,15 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+/**
+ * I: function valuesToString takes an object parameter
+ * O: return the object values into a string
+ * C: each value in string is seperated by a space
+ * E:
+ */
     
+return Object.values(object).join(" ")
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,6 +50,18 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
+/**
+ * I: function arrayOrObject takes collections as parameters
+ * O: return if array is an array or if object is anb object
+ * C:
+ * E: takes one argument (array or object)
+ */
+
+if (Array.isArray(collection)){
+    return "array"
+} else if (typeof collection === 'object'){
+    return "object"
+}
     
 }
 
@@ -35,7 +70,15 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+/**
+ * I: function capitalizeWord takes a string (which is one word)
+ * O: retirm string with the first letter capitalize
+ * C:
+ * E:
+ */
+
+return string.charAt(0).toUpperCase() + string.slice(1)
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +86,17 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+/**
+ * I: function capitalizeAllWords takes a string parameter
+ * O: return all the words with the first letter caplizaed
+ * C:
+ * E:
+ */
+
+for(var i = 0; i < string.length; ){
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +104,12 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +117,12 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +130,12 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -75,7 +143,12 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -83,7 +156,12 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -91,7 +169,12 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -99,7 +182,12 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -107,7 +195,12 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -115,7 +208,12 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -123,7 +221,12 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+/**
+ * I: function
+ * O: 
+ * C:
+ * E:
+ */
 }
 
 //////////////////////////////////////////////////////////////////////
