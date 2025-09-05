@@ -41,8 +41,14 @@ function valuesToString(object) {
  * E:
  */
     
-return Object.values(object).join(" ")
+var resultString = ""
 
+for (let key in object){
+    if (typeof object[key] === 'string'){
+        resultString += object[key] + ' '
+    }
+}
+return resultString.trim()
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -93,10 +99,11 @@ function capitalizeAllWords(string) {
  * E:
 */
 
-var words = string.split("");
+var words = string.split(" ");
 
 for(var i = 0; i < words.length; i++){
-     words[i][0].toUpperCase() + words[i].slice(1)
+    var capWords = words[i]
+     words[i]= capWords[0].toUpperCase() + words[i].slice(1)
 }
 return words.join(" ")
 }
@@ -134,7 +141,7 @@ function profileInfo(object) {
 
 var nameObj = object.name // for the name
 
-var species = object.speices; // for the speices
+var species = object.species; // for the speices
 
 var capitalizedName = nameObj.split("")[0].toUpperCase() + nameObj.slice(1);
 
@@ -221,6 +228,9 @@ function isFriend(name, object) {
  * E:
  */
 
+if(!Array.isArray(object.friends)){
+    return false
+}
 
 for (var i = 0; i < object.friends.length; i++){
     if (name === object.friends[i]){
@@ -248,7 +258,16 @@ function nonFriends(name, array) {
 // maybe holding a place for the not friends array?
 var nonFriends = []
 
+for (var i = 0; i < array.length; i++){
+    if(array[i].name !== name){
+        if (!array[i].friends.includes(name)){
+            nonFriends.push(array[i].name)
+        }
+    }
 
+}
+
+return nonFriends
 
 }
 //////////////////////////////////////////////////////////////////////
