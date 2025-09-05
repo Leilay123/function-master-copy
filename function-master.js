@@ -244,19 +244,27 @@ function nonFriends(name, array) {
  * C:
  * E:
  */
-}
 
+// maybe holding a place for the not friends array?
+var nonFriends = []
+
+
+
+}
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
 /**
- * I: function
+ * I: function updateObject
  * O: 
  * C:
  * E:
  */
+object[key] = value
+return object;
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -265,11 +273,22 @@ function updateObject(object, key, value) {
 
 function removeProperties(object, array) {
 /**
- * I: function
- * O: 
+ * I: function removeProperties take an object and array (of strings)
+ * O: function should remove any properties in object that are in the array
  * C:
  * E:
  */
+
+for (var key in object){
+    if (object.hasOwnProperty(key)){
+        for(var i = 0; i < array.length; i++){
+        if (array[i] === key) {
+            delete object[key];
+            break;
+        }
+     }
+    }
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -278,11 +297,21 @@ function removeProperties(object, array) {
 
 function dedup(array) {
 /**
- * I: function
- * O: 
+ * I: function dedup take an array parameter
+ * O: function should return the array with all duplicates removed
  * C:
  * E:
  */
+
+var noDups = []
+
+for (var i = 0; i < array.length; i++){
+    // how to check for duplicates?
+    if (noDups.indexOf(array[i]) === -1){
+        noDups.push(array[i])
+    }
+}
+return noDups
 }
 
 //////////////////////////////////////////////////////////////////////
